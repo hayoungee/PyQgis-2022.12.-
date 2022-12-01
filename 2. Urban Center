@@ -345,7 +345,7 @@ fill_value(_NEIGHBORS_FIELD,0)
 
 ##<< Save selected part to vector layer >>
 _writer = QgsVectorFileWriter.writeAsVectorFormat(layer,
-                                                  'C:/Users/User/Desktop/지역분류체계/urban_emd_20/인구격자읍면동_20_부산/is_cluster_1.shp',
+                                                  'C:/Users/User/Desktop/지역분류체계/urban_emd_20/test1/is_cluster_1.shp',
                                                   "EUC-KR", layer.crs(), "ESRI Shapefile", onlySelected=True)
 
 
@@ -354,8 +354,8 @@ layer = iface.activeLayer()
 
 import processing
 
-infn = "C:/Users/User/Desktop/지역분류체계/urban_emd_20/인구격자읍면동_20_부산/is_cluster_1.shp"
-outfn2 = "C:/Users/User/Desktop/지역분류체계/urban_emd_20/인구격자읍면동_20_부산/urbancenter_dissolve.shp"
+infn = "C:/Users/User/Desktop/지역분류체계/urban_emd_20/test1/is_cluster_1.shp"
+outfn2 = "C:/Users/User/Desktop/지역분류체계/urban_emd_20/test1/UrbanCenter_Dissolve.shp"
 
 processing.run("native:dissolve", {'INPUT': infn, 'FIELD': [_WHERE_LAND_FIELD], 'OUTPUT': outfn2})
 
@@ -365,5 +365,5 @@ layer3 = iface.addVectorLayer(outfn2, '','ogr')
 
 print('Processing complete._UrbanCenter')
 
-## 결과물 : urbancenter_dissolve.shp
+## 결과물 : UrbanCenter_Dissolve.shp
 ## Urban Center 덩어리 4개이나, 데이터 1건만 나옴 -> dissolve 되어 전체를 하나로 취급함.
