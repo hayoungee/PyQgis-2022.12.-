@@ -176,8 +176,9 @@ def tot_sum():
 
     # Create a dictionary of all features
     feature_dict = {f.id(): f for f in layer.getFeatures()}
-
-    land = 10
+    
+    # 초기값 부여(전체 cluster(덩어리) 수 보다 커야함 - 전국 돌릴 시 유의)
+    land = 1000000
 
     # Make one pointer _table
     for a in feature_dict.values():
