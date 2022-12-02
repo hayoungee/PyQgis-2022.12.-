@@ -177,7 +177,7 @@ def tot_sum()
     # 모든 피쳐에 대한 dictionary 생성
     feature_dict 에 f의 id를 키 값으로 하는 f 피쳐를 담아
     # land 초기화 (한자리 수는 urban center 두자리수는 urban cluster로 구분하기 위함)
-    land 변수를 10으로 초기화
+    land 변수를 1000000으로 초기화
 
     # 포인터 하나 생성 _table
     모든 피쳐를 돌면서 (a)
