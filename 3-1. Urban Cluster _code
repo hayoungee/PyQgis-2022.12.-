@@ -374,3 +374,10 @@ print('Processing complete._UrbanCluster')
 
 ##<< Show TOT_SUM of UrbanCenter and UrbanCluster >>
 print_TOT_SUM('C:/Users/User/Desktop/지역분류체계/urban_emd_20/test1')
+
+
+## Urban Cluster 까지 된 파일 저장
+QgsVectorFileWriter.writeAsVectorFormat(layer,
+                                        'C:/Users/User/Desktop/지역분류체계/urban_emd_20/test3_부울경(통영오류 보완)/인구격자읍면동_20_부울경_urbancluster.shp',
+                                        "EUC-KR", layer.crs(), "ESRI Shapefile")
+
