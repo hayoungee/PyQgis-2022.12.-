@@ -1,3 +1,6 @@
+SPDX-FileCopyrightText: © 2022 doohaaa
+SPDX-License-Identifier: MIT
+
 ## 시각화 3단계 : Dissolve 된 것 시각화
 
 my_file1 = 'C:/Users/User/Desktop/지역분류체계/urban_emd_20/test2_부울경/UrbanCenter_Dissolve.shp'
