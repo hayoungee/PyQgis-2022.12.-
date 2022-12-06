@@ -1,6 +1,8 @@
 SPDX-FileCopyrightText: © 2022 doohaaa
 SPDX-License-Identifier: MIT
 
+## 갭필링 전 인구 300, 1500명을 경계로 인구수 단계별 시각화
+
 from PyQt5 import QtGui
 
 layer.removeSelection()
@@ -22,7 +24,7 @@ for f in feature_dict.values():
 layer.commitChanges()
 print('Processing complete._ TOT 데이터 전처리')
 
-## 시각화 
+## 시각화 (myOpacity1 = 투명도)
 myVectorLayer = iface.activeLayer()
 myTargetField = 'TOT'
 myRangeList = []
@@ -30,7 +32,7 @@ myOpacity1 = 0.0
 myOpacity = 0.325
 # Make our first symbol and range...
 myMin = 0.0
-myMax = 300.0
+myMax = 299.9
 myLabel = 'Group 1'
 myColour = QtGui.QColor('white')
 mySymbol1 = QgsSymbol.defaultSymbol(myVectorLayer.geometryType())
@@ -40,7 +42,7 @@ myRange1 = QgsRendererRange(myMin, myMax, mySymbol1, myLabel)
 myRangeList.append(myRange1)
 #now make another symbol and range...
 myMin = 300.0
-myMax = 1500
+myMax = 1499.9
 myLabel = 'Group 2'
 myColour = QtGui.QColor('blue')
 mySymbol2 = QgsSymbol.defaultSymbol(myVectorLayer.geometryType())
