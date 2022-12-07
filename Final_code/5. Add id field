@@ -102,7 +102,7 @@ def create_new_field(name,type):
     layer.updateFields()
     print('Processing complete. _create_new_field')
 
-# give emd_id
+# give inter_id
 def give_inter_id():
     layer= iface.activeLayer()
     layer.startEditing()
