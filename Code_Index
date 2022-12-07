@@ -1,3 +1,5 @@
+
+
 ###### 1. Add or Remove Vector Layer ######
 
 # Add Vector Layer
@@ -159,12 +161,22 @@ print ('Processing complete.')
 
 
 
-###### 5. Select Features ######
+###### 5. Select & Export Features ######
 
+# selecte features
 layer = iface.activeLayer()
 
 #put your expression in ' '
 layer.selectByExpression('"TOT">1500',QgsVectorLayer.SetSelection)
+
+
+# export selected features
+
+#write down your file path and file name like this 'C:/Users/User/myfile.shp'
+my_file=''
+
+#QgsVectorFileWriter.writeAsVectorFormat(layer,my_file,"encoding",layer.crs(),"file format", option)
+_writer=QgsVectorFileWriter.writeAsVectorFormat(layer,my_file,"EUC-KR",layer.crs(),"ESRI Shapefile", onlySelected=True)
 
 
 
@@ -173,5 +185,5 @@ layer.selectByExpression('"TOT">1500',QgsVectorLayer.SetSelection)
 ###### 6. Save as Shape File ######
 
 layer = iface.activeLayer()
-path = 'C:/Users/User/Desktop/지역분류체계/총정리/1_지역분류/1129test/savingTest.shp'
+path = 'C:/Users/User/Desktop/지역분류체계/urban_emd_20/test/savingTest.shp'
 _writer = QgsVectorFileWriter.writeAsVectorFormat(layer,path,'utf-8',driverName='ESRI Shapefile')
